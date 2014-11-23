@@ -1,17 +1,59 @@
 package com.example.software;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.Button;
 
 public class DifficultyActivity extends Activity {
-	@Override
+	
+	Button easy;
+	Button medium;
+	Button hard;
+	
     public void onCreate(Bundle savedInstanceState) {         
 
        super.onCreate(savedInstanceState);    
        setContentView(R.layout.difficulty_view);
-       //rest of the code
+       
+    // find view-elements
+       easy = (Button) findViewById(R.id.easybutton);
+       medium = (Button) findViewById(R.id.mediumbutton);
+       hard = (Button) findViewById(R.id.hardbutton);
+       
+       // create click listener
+       OnClickListener oclEasy = new OnClickListener() {
+           @Override
+           public void onClick(View v) {
+           	Intent i = new Intent(getBaseContext(), EasyActivity.class);
+   			startActivity(i);
+           }
+         };
+         
+         OnClickListener oclMedium = new OnClickListener() {
+             @Override
+             public void onClick(View v) {
+            	 Intent i = new Intent(getBaseContext(), MediumActivity.class);
+        			startActivity(i);
+             }
+           };
+           
+           OnClickListener oclHard = new OnClickListener() {
+               @Override
+               public void onClick(View v) {
+            	   Intent i = new Intent(getBaseContext(), HardActivity.class);
+          			startActivity(i);
+               }
+             };
+         
+       // assign click listeners
+       easy.setOnClickListener(oclEasy);
+       medium.setOnClickListener(oclMedium);
+       hard.setOnClickListener(oclHard);
    }
 	
 	@Override
