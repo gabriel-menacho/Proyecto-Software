@@ -10,5 +10,9 @@
     <string name="easy">EASY</string>
     <string name="medium">MEDIUM</string>
     <string name="hard">HARD</string>
+    <string name="NIVEL1">NIVEL1</string>
+    <string name="NIVEL2">NIVEL2</string>
+    <string name="NIVEL3">NIVEL3</string>
+    <string name="NIVEL4">NIVEL4</string>
 
 </resources>

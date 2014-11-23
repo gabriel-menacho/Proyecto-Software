@@ -26,6 +26,7 @@
         <activity android:name="EasyActivity"></activity>
         <activity android:name="MediumActivity"></activity>
         <activity android:name="HardActivity"></activity>
+        <activity android:name="Niveles"></activity>
     </application>
 
 </manifest>
