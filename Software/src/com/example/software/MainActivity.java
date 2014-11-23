@@ -1,17 +1,52 @@
 package com.example.software;
 
-import android.support.v7.app.ActionBarActivity;
+import com.example.software.DifficultyActivity;
+
+import android.view.View.OnClickListener;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
 
 
 public class MainActivity extends ActionBarActivity {
+	
+	Button play;
+	Button exit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // find view-elements
+        play = (Button) findViewById(R.id.playbutton);
+        exit = (Button) findViewById(R.id.exitbutton);
+        
+        // create click listener
+        OnClickListener oclPlay = new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            	Intent i = new Intent(getBaseContext(), DifficultyActivity.class);
+    			startActivity(i);
+            	// change view to the difficulties view
+            }
+          };
+          
+          OnClickListener oclExit = new OnClickListener() {
+              @Override
+              public void onClick(View v) {
+                // exit application
+            	  System.exit(0);
+              }
+            };
+          
+        // assign click listeners
+        play.setOnClickListener(oclPlay);
+        exit.setOnClickListener(oclExit);
     }
 
 
