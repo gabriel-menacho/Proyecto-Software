@@ -11,61 +11,60 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-
 public class MainActivity extends ActionBarActivity {
-	
+
 	Button play;
 	Button exit;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        
-        // find view-elements
-        play = (Button) findViewById(R.id.playbutton);
-        exit = (Button) findViewById(R.id.exitbutton);
-        
-        // create click listener
-        OnClickListener oclPlay = new OnClickListener() {
-            @Override
-            public void onClick(View v) {
-            	Intent i = new Intent(getBaseContext(), DifficultyActivity.class);
-    			startActivity(i);
-            	// change view to the difficulties view
-            }
-          };
-          
-          OnClickListener oclExit = new OnClickListener() {
-              @Override
-              public void onClick(View v) {
-                // exit application
-            	  System.exit(0);
-              }
-            };
-          
-        // assign click listeners
-        play.setOnClickListener(oclPlay);
-        exit.setOnClickListener(oclExit);
-    }
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
 
+		// find view-elements
+		play = (Button) findViewById(R.id.playbutton);
+		exit = (Button) findViewById(R.id.exitbutton);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
-        return true;
-    }
+		// create click listener
+		OnClickListener oclPlay = new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				Intent i = new Intent(getBaseContext(),
+						DifficultyActivity.class);
+				startActivity(i);
+				// change view to the difficulties view
+			}
+		};
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+		OnClickListener oclExit = new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				// exit application
+				System.exit(0);
+			}
+		};
+
+		// assign click listeners
+		play.setOnClickListener(oclPlay);
+		exit.setOnClickListener(oclExit);
+	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		// Inflate the menu; this adds items to the action bar if it is present.
+		getMenuInflater().inflate(R.menu.main, menu);
+		return true;
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle action bar item clicks here. The action bar will
+		// automatically handle clicks on the Home/Up button, so long
+		// as you specify a parent activity in AndroidManifest.xml.
+		int id = item.getItemId();
+		if (id == R.id.action_settings) {
+			return true;
+		}
+		return super.onOptionsItemSelected(item);
+	}
 }
